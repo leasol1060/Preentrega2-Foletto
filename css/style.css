@@ -1,0 +1,343 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border sizing-border box me permite que cuando trabaja ancho y alto en la etiqueta, no me suma lo de border y padding, */
+    box-sizing: border-box;
+}
+/* estilos de las imagenes */
+.imagenfondo {
+    background-color: #161616;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+.imagenes {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+.imagenesdos {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 100%;
+    height: 400px;
+}
+/*------------------------------------------------*/
+html {
+    font-family: 'Anton', sans-serif;
+}
+/* estilos del index */
+.pasosProductos {
+    text-align: left;
+    list-style: none;
+    color: aquamarine;
+    font-size: 30px;
+}
+.lista-productos {
+    list-style: none;
+    font-size: 20px;
+}
+/* estilos para las etiquetas h*/
+h1 {
+    background-color: none;
+    color: rgb(0, 150, 150);
+    text-align: center;
+    /* espacio interno de una etiqueta*/
+    padding: 5px 30px 5px 40px;
+    /* espacio externo de una etiqueta*/
+    margin: 50px;
+}
+h2 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+h3 {
+    color: white;
+    text-align: center;
+}
+/*------------------------------------------------*/
+/* estilos para los parrafos */
+p {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+/*------------------------------------------------*/
+/* estilos para los main */
+main {
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 10px;
+}
+
+/*este iria en las imagenes del main de index, desppues vemos de sacarlo sino*/
+.main section div div div img {
+
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+main p span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*------------------------------------------------*/
+/* estilos para el footer */
+footer {
+    background-color: #161616;
+    position: fixed;
+    margin-top: 30px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+/* estilos para el texto del footer */
+.claseDerechos {
+    color: rgb(103, 168, 163);
+    bottom: 0;
+}
+/*------------------------------------------------*/
+/*absolute y fixed usamos para el html de productos*/
+.item-absolute {
+    position: absolute;
+    height: 100px;
+    right: 1px;
+    top: 100px;
+}
+.item-fixed-whatsapp {
+    /*para botòn de wsp*/
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+}
+.item-fixed-menu {
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    top: 0px
+}
+.item-fixed-face {
+    /*para botòn de face*/
+    position: fixed;
+    bottom: 5px;
+    right: 85px;
+    width: 60px;
+    height: 60px;
+}
+.item-fixed-insta {
+    /*para botòn de insta*/
+    position: fixed;
+    bottom: 5px;
+    right: 170px;
+    width: 60px;
+    height: 60px;
+}
+.item-fixed-arriba {
+    /*para botòn de insta*/
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+}
+/*------------------------------------------------*/
+/*estilo para la barra hamburguesa*/
+.menuhamb:hover {
+    border-bottom: 2px solid rgb(62, 230, 230);
+    color: rgb(69, 177, 219);
+}
+/*------------------------------------------------*/
+/* estilos del menu*/
+.menu {
+    margin-top: 0;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+.menu ul li {
+    background-color: chocolate;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+/*------------------------------------------------*/
+/* propiedades de la etiqueta padre*/
+.laCaja {
+    margin-top: 30px;
+    text-align: center;
+}
+/* propiedades de los hijos*/
+.caja {
+    background-color: darkgray;
+    /* propiedades para el ancho de la etiqueta*/
+    width: 150px;
+    /* propiedades para el alto de la etiqueta*/
+    height: 50px;
+    margin: 50px;
+    padding: 10px;
+    display: inline-block;
+}
+/*------------------------------------------------*/
+/*estilos para el main de productos imagenes*/
+main div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*vamos a crear una clase para main de productos*/
+.imagenesyvideos {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(.5, 33%);
+    gap: 1rem;
+    margin: 1rem 3rem 3rem 3rem;
+}
+/*------------------------------------------------*/
+/*media querin esto es para colocar el minimo de pantalla para visualizar*/
+@media screen and (min-width:600px) {
+    /*estilos para la clase de main*/
+    .imagenesyvideos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+    }
+    .img-uno,
+    .img-dos {
+        grid-row: span 1;
+    }
+    .img-tres,
+    .img-cuatro .img-cinco,
+    .img-seis {
+        grid-column: span 2;
+    }
+}
+/*media querin para pantallas de escritorio*/
+@media screen and (min-width:1024px) {
+    .imagenesyvideos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 33% 33% 33%;
+    }
+    .img-uno {
+        grid-row: span 1;
+    }
+    .img-dos {
+        grid-column: span 2;
+    }
+    .img-tres {
+        grid-column: span 3;
+    }
+    .img-cuatro {
+        grid-row: span 2;
+    }
+    .img-cinco {
+        grid-column: span 2;
+    }
+}
+/*--------------------------------------------------------------------*/
+/*vamos a crear una clase para main de quienes somos*/
+.imagenesyvideosdos {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(.5, 33%);
+    gap: 1rem;
+    margin: 1rem 3rem 3rem 3rem;
+}
+/*media querin esto es para colocar el minimo de pantalla para visualizar*/
+@media screen and (min-width:600px) {
+    /*estilos para la clase de main*/
+    .imagenesyvideosdos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+    }
+    .img-quiencinco,
+    .img-quienseis,
+    .img-quiensiete {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    .img-quiendos,
+    .img-quientres {
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
+/*media querin para pantallas de escritorio*/
+@media screen and (min-width:1024px) {
+    .imagenesyvideosdos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 33% 33% 33%;
+    }
+    .img-quiencinco,
+    .img-quienseis,
+    .img-quiensiete {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+    .img-quiendos,
+    .img-quientres {
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
+/*--------------------------------------------------------------------*/
+/*ajustes para el carrusel*/
+.carrusel-estilos {
+    margin: 0 auto;
+    text-align: center;
+    object-fit: cover;
+}
+.carousel-control-next-icon {
+    background-color: aqua;
+}
+.carousel-control-prev-icon {
+    background-color: aqua;
+}
+.carrusel-index {
+    width: 100%;
+    overflow: hidden;
+}
+.carrusel-index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .carrusel-index {
+        height: 300px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .carrusel-index {
+        height: 400px;
+    }
+}
+@media (min-width: 1025px) {
+    .carrusel-index {
+        height: 500px;
+    }
+}
+.carrusel-index iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*clase para el form en html de contacto*/
+.claseform {
+    color: white;
+    text-align: center;
+}
